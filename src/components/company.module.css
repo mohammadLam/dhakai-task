@@ -1,0 +1,76 @@
+.comapanyBox {
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.banners {
+  display: flex;
+  column-gap: 3px;
+}
+
+.bannerImg {
+  height: 90px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.companyDetailsDiv {
+  padding: 0px 20px;
+}
+
+.companyName {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2a2a2e;
+}
+
+.locationQuantityDiv {
+  display: flex;
+  margin-bottom: 6px;
+  justify-content: space-between;
+}
+
+.companyLocation {
+  font-size: 14px;
+  color: #63636a;
+}
+
+.minQuantity {
+  font-family: 'Inter', 'SFUIDisplay';
+  font-size: 14px;
+  font-weight: 500;
+  color: #01896a;
+}
+
+.clothes {
+  font-family: 'Inter', SFUIDisplay;
+  font-size: 14px;
+  color: #63636a;
+  margin-bottom: 25px;
+}
+
+.detailsButon {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Inter';
+  background-color: #d1ffd0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #01896a;
+}
+
+.logoDiv {
+  position: relative;
+  padding: 30px 0px;
+}
+
+.logo {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+}

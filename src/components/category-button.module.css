@@ -1,0 +1,17 @@
+.categoryBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1.5px solid #ebebeb;
+  border-radius: 5px;
+  color: #2a2a2e;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.selected {
+  color: #fff;
+  border: none;
+  background-color: #01896a;
+}
