@@ -29,6 +29,7 @@ const Company: React.FC = () => {
           alt='logo'
         />
       </div>
+      <p className=''></p>
 
       <div className={styles.companyDetailsDiv}>
         <p className={styles.companyName}>Paul Garments Limited</p>

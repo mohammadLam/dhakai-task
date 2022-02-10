@@ -1,4 +1,5 @@
 import React from 'react'
+import { Carousel } from 'react-responsive-carousel'
 import Category from './category-button'
 import styles from './category-list.module.css'
 import Container from './container'
@@ -6,7 +7,7 @@ import Container from './container'
 const CategoryList = () => {
   return (
     <Container styleClass={styles.categoryDiv}>
-      <div className={styles.container}>
+      <Carousel className={styles.container}>
         <Category text='All for you' isSelected={true} />
         <Category text='Recommended' />
         <Category text='Top Manufectures' />
@@ -16,7 +17,10 @@ const CategoryList = () => {
         <Category text='Kids Wear' />
         <Category text='T-Shirt' />
         <Category text='Mens Shoes' />
-      </div>
+        <Category text='Kids Wear' />
+        <Category text='T-Shirt' />
+        <Category text='Mens Shoes' />
+      </Carousel>
     </Container>
   )
 }

@@ -1,7 +1,6 @@
 .categoryBtn {
   padding: 10px 20px;
   font-size: 16px;
-  font-weight: 600;
   background-color: #fff;
   border: 1.5px solid #ebebeb;
   border-radius: 5px;
@@ -11,6 +10,7 @@
 }
 
 .selected {
+  font-weight: 500;
   color: #fff;
   border: none;
   background-color: #01896a;
