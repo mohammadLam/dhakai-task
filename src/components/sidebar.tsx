@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './sidebar.module.css'
 import DhakaiIcon from '../img/sidebar/Dhakai.svg'
 import HomeIcon from '../img/sidebar/Home.svg'
 import SearchIcon from '../img/sidebar/Search.svg'
@@ -15,13 +14,13 @@ import InfoIcon from '../img/sidebar/Info.svg'
 
 const Sidebar: React.FC = () => {
   return (
-    <section className={styles.sidebar}>
-      <div className={styles.firstSideSection}>
+    <section className='h-screen fixed bg-white w-20 flex flex-col justify-between py-7'>
+      <div className='flex flex-col justify-center items-center gap-y-5'>
         <a href='/'>
           <img src={DhakaiIcon} alt='dhakai' />
         </a>
 
-        <div className={styles.sidebarIcon}>
+        <div className='flex flex-col justify-center items-center gap-y-5 mb-5'>
           <a href='/'>
             <img src={HomeIcon} alt='dhakai' />
           </a>
@@ -52,7 +51,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.sidebarIcon}>
+      <div className='flex flex-col justify-center items-center gap-y-5'>
         <a href='/'>
           <img src={SettingsIcon} alt='dhakai' />
         </a>

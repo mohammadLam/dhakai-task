@@ -1,44 +1,49 @@
 import React from 'react'
-import styles from './company.module.css'
+import { Manufacturer } from '../interface'
 
-const Company: React.FC = () => {
+interface Props {
+  company: Manufacturer
+}
+
+const Company: React.FC<Props> = ({ company }) => {
+  const clothes: string = company.productGroups
+    .map(clothe => clothe.name)
+    .join(', ')
+
   return (
-    <div className={styles.comapanyBox}>
-      <div className={styles.banners}>
-        <img
-          src='https://dev-cdn-dhakai.s3.amazonaws.com/a353acf5-30d2-497f-8ed3-8a37870ceada.png'
-          className={styles.bannerImg}
-          alt='banner'
-        />
-        <img
-          src='https://dev-cdn-dhakai.s3.amazonaws.com/63f5da0f-a8ff-41e9-9e22-1cb7498ddb11.png'
-          className={styles.bannerImg}
-          alt='banner'
-        />
-        <img
-          src='https://dev-cdn-dhakai.s3.amazonaws.com/a353acf5-30d2-497f-8ed3-8a37870ceada.png'
-          className={styles.bannerImg}
-          alt='banner'
-        />
+    <div className='bg-white  comapny-box-shadow rounded-lg'>
+      {/* banners */}
+      <div className='flex p-3 gap-x-3'>
+        {company.meta.banners.map((banner, index) => (
+          <img
+            key={index}
+            src={banner.url}
+            className='object-cover rounded w-full h-90'
+            alt='banner'
+          />
+        ))}
       </div>
 
-      <div className={styles.logoDiv}>
+      <div className='relative py-6'>
         <img
-          className={styles.logo}
-          src='https://dev-cdn-dhakai.s3.amazonaws.com/a9eae919-e449-4239-8aa5-32299a67bbe4.png'
+          className='absolute left-2 -top-12'
+          src={company.meta.logo.url}
           alt='logo'
         />
       </div>
-      <p className=''></p>
 
-      <div className={styles.companyDetailsDiv}>
-        <p className={styles.companyName}>Paul Garments Limited</p>
-        <div className={styles.locationQuantityDiv}>
-          <p className={styles.companyLocation}>Dhaka, Bangladesh</p>
-          <p className={styles.minQuantity}>Min Qty: 500</p>
+      <div className='px-6 pb-6'>
+        <p className='mt-4 font-bold text-xl mb-2 text-text'>
+          {company.meta.companyName}
+        </p>
+        <div className='flex justify-between mb-2'>
+          <p className='text-light'>
+            {company.addresses[0].city}, {company.addresses[0].country}
+          </p>
+          <p className='text-green'>Min Qty: {company.minOrderQty}</p>
         </div>
-        <p className={styles.clothes}>Hoodies, Trousers, Jacket Hoodies</p>
-        <button className={styles.detailsButon}>View Details</button>
+        <p className='text-light mb-5'>{clothes}</p>
+        <button className='details-button'>View Details</button>
       </div>
     </div>
   )

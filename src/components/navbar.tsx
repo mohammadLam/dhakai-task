@@ -1,13 +1,14 @@
 import React from 'react'
 import Notification from './notification'
 import Search from './search'
-import styles from './navbar.module.css'
 import Container from './container'
+import ExploreActivityButton from './explore-activity'
 
 const Navbar: React.FC = () => {
   return (
-    <div className={styles.nav}>
-      <Container styleClass={styles.container}>
+    <div className='bg-primary'>
+      <Container styleClass='flex items-center justify-between h-20'>
+        <ExploreActivityButton type='Explore' />
         <Search />
         <Notification />
       </Container>

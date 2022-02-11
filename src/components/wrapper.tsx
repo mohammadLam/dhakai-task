@@ -1,12 +1,11 @@
 import React from 'react'
-import styles from './wrapper.module.css'
 
 interface Props {
   children: React.ReactNode
 }
 
 const Wrapper: React.FC<Props> = ({ children }) => {
-  return <div className={styles.wrapper}>{children}</div>
+  return <div className='ml-20 w-auto'>{children}</div>
 }
 
 export default Wrapper

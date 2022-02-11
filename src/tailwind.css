@@ -1,3 +1,39 @@
-/* @tailwind base; */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button {
+  @apply bg-white text-normal rounded whitespace-nowrap cursor-pointer px-6 py-2 border border-light-two;
+}
+
+.button-selected {
+  @apply bg-primary font-bold text-white border-0;
+}
+
+.details-button {
+  @apply text-primary border-none rounded-full font-bold px-4 py-2 bg-green-light text-sm;
+}
+
+.notification-button {
+  @apply relative w-11 h-11 border-none outline-none flex items-center justify-center rounded-full;
+}
+
+.notification-button-light {
+  @apply bg-light-two;
+}
+
+.notification-button-primary {
+  @apply bg-primary-dark;
+}
+
+.comapny-box-shadow {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.explore-activity-div-shadow {
+  box-shadow: 0 2px 0 0 #009d79, inset 0 2px 0 0 #006c53;
+}
+
+.explore-activity-selected-shadow {
+  box-shadow: 0 2px 0 0 #006c53, inset 0 2px 0 0 #009d79;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './category-button.module.css'
 
 interface Props {
   isSelected?: boolean
@@ -8,10 +7,9 @@ interface Props {
 
 const Category: React.FC<Props> = ({ isSelected, text }) => {
   return (
-    <button
-      className={`${styles.categoryBtn} ${isSelected ? styles.selected : ''}`}>
+    <div className={`${isSelected ? 'button button-selected' : 'button'}`}>
       {text}
-    </button>
+    </div>
   )
 }
 

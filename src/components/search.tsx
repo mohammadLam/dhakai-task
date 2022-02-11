@@ -1,13 +1,12 @@
 import React from 'react'
-import styles from './search.module.css'
 import SearchIcon from '../img/search.svg'
 
 const Search: React.FC = () => {
   return (
-    <div className={styles.search}>
+    <div className='flex bg-white px-4 py-2 rounded-full gap-x-4'>
       <img src={SearchIcon} alt='search-icon' />
       <input
-        className={styles.searchInput}
+        className='bg-transparent border-none outline-none'
         type='text'
         placeholder='Search by name, group, type and others'
       />

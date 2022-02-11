@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './round-button.module.css'
 
 interface Props {
   variant: 'primary' | 'secondary'
@@ -11,12 +10,14 @@ const RoundButton: React.FC<Props> = ({ variant, url, count }) => {
   return (
     <>
       {variant === 'primary' ? (
-        <button className={`${styles.roundButton} ${styles.primary}`}>
+        <button className='notification-button notification-button-primary'>
           <img src={url} alt='button icon' />
-          <div className={styles.count}>{count}</div>
+          <div className='absolute flex justify-center items-center text-white bg-red-700 w-5 h-5 rounded-full -top-1 -right-1'>
+            {count}
+          </div>
         </button>
       ) : (
-        <button className={`${styles.roundButton} ${styles.secondary}`}>
+        <button className='notification-button notification-button-light'>
           <img src={url} alt='button icon' />
         </button>
       )}

@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './container.module.css'
 
 interface Props {
   children: React.ReactNode
@@ -7,7 +6,11 @@ interface Props {
 }
 
 const Container: React.FC<Props> = ({ children, styleClass }) => {
-  return <div className={`${styles.container} ${styleClass}`}>{children}</div>
+  return (
+    <div className={`container mx-auto ${styleClass ? styleClass : ''}`}>
+      {children}
+    </div>
+  )
 }
 
 export default Container

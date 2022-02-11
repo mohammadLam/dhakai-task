@@ -9,7 +9,7 @@ interface Result {
   count: number
 }
 
-interface Manufacturer {
+export interface Manufacturer {
   meta: Meta
   contact: Contact
   role: Role

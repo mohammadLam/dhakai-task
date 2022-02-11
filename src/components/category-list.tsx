@@ -1,13 +1,11 @@
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
 import Category from './category-button'
-import styles from './category-list.module.css'
 import Container from './container'
 
-const CategoryList = () => {
+const CategoryList: React.FC = () => {
   return (
-    <Container styleClass={styles.categoryDiv}>
-      <Carousel className={styles.container}>
+    <div className='bg-white shadow py-3 px-10'>
+      <Container styleClass='flex gap-x-5 overflow-x-hidden'>
         <Category text='All for you' isSelected={true} />
         <Category text='Recommended' />
         <Category text='Top Manufectures' />
@@ -20,8 +18,8 @@ const CategoryList = () => {
         <Category text='Kids Wear' />
         <Category text='T-Shirt' />
         <Category text='Mens Shoes' />
-      </Carousel>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

@@ -1,24 +1,21 @@
 import React from 'react'
 import './App.css'
-import CategoryList from './components/category-list'
-import CompanyList from './components/company-list'
-import Container from './components/container'
-import Navbar from './components/navbar'
-import Sidebar from './components/sidebar'
-import Wrapper from './components/wrapper'
 
-function App() {
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import AuthenticatedRoute from './routes/AuthenticatedRoute'
+import Login from './pages/login'
+import Home from './pages/home'
+
+const App: React.FC = () => {
   return (
-    <>
-      <Sidebar />
-      <Wrapper>
-        <Navbar />
-        <CategoryList />
-        <Container>
-          <CompanyList />
-        </Container>
-      </Wrapper>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AuthenticatedRoute />}>
+          <Route path='/' element={<Home />} />
+        </Route>
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
