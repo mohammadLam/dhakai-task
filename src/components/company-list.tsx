@@ -52,7 +52,7 @@ const CompanyList: React.FC = () => {
         </div>
       }
       element='div'>
-      <div className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 mt-5 gap-5'>
+      <div className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 my-5 gap-5'>
         {companies.result
           ? companies.result.manufacturers.map((company, index) => (
               <Company key={index} company={company} />

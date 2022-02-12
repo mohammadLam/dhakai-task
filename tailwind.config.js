@@ -18,12 +18,15 @@ module.exports = {
       light: '#63636a',
       green: '#01896a'
     },
-    screen: {
-      sm: '580px',
-      md: '688px',
-      lg: '944px',
-      xl: '1200px',
-      '2xl': '1456px'
+
+    container: {
+      screens: {
+        sm: '580px',
+        md: '688px',
+        lg: '944px',
+        xl: '1200px',
+        '2xl': '1360px'
+      }
     }
   },
   plugins: []

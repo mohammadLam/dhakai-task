@@ -37,3 +37,7 @@
 .explore-activity-selected-shadow {
   box-shadow: 0 2px 0 0 #006c53, inset 0 2px 0 0 #009d79;
 }
+
+.styles-module_slider__o0fqa {
+  @apply gap-x-4;
+}
