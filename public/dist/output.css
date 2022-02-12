@@ -565,6 +565,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-90 {
   height: 90px;
 }
@@ -597,8 +601,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: auto;
 }
 
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.rotate-180 {
+  --tw-rotate: 180deg;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-col {
@@ -638,10 +644,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-y-5 {
   row-gap: 1.25rem;
-}
-
-.overflow-x-hidden {
-  overflow-x: hidden;
 }
 
 .rounded-lg {
@@ -762,6 +764,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 1.5rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -774,6 +780,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-normal {
+  --tw-text-opacity: 1;
+  color: rgb(42 42 46 / var(--tw-text-opacity));
 }
 
 .text-light {
@@ -820,6 +835,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  text-align: center;
   --tw-text-opacity: 1;
   color: rgb(42 42 46 / var(--tw-text-opacity));
 }
@@ -828,7 +844,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 0px;
   --tw-bg-opacity: 1;
   background-color: rgb(1 137 106 / var(--tw-bg-opacity));
-  font-weight: 700;
+  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -844,7 +860,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(1 137 106 / var(--tw-text-opacity));
 }
@@ -872,7 +888,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(0 108 83 / var(--tw-bg-opacity));
 }
 
-.comapny-box-shadow {
+.company-box-shadow {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -882,4 +898,28 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .explore-activity-selected-shadow {
   box-shadow: 0 2px 0 0 #006c53, inset 0 2px 0 0 #009d79;
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

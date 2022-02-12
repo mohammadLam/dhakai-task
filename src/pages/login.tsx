@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import LoginResponse from '../interface/login-response'
-import DeviceIdResponse from '../interface/device-response'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import LoginResponse from '../interface/login-response';
+import DeviceIdResponse from '../interface/device-response';
 
 const Login: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [auth, setAuth] = useState({
     username: 'rajib2@gmail.com',
     password: '123456'
-  })
+  });
 
   // login function
   const login = async (event: React.FormEvent) => {
-    event.preventDefault()
+    event.preventDefault();
 
     try {
       // get device id
@@ -21,10 +21,10 @@ const Login: React.FC = () => {
         {
           method: 'GET'
         }
-      )
+      );
 
       // convert response to json
-      const deviceUuid: DeviceIdResponse = await getDeviceId.json()
+      const deviceUuid: DeviceIdResponse = await getDeviceId.json();
 
       // request body
       const body = {
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
           deviceUuid: deviceUuid.result.deviceUuid
         },
         password: auth.password
-      }
+      };
 
       // make a post request with the login data
       const response = await fetch(
@@ -45,28 +45,30 @@ const Login: React.FC = () => {
           method: 'POST',
           body: JSON.stringify(body)
         }
-      )
+      );
 
       // get the response body
-      const data: LoginResponse = await response.json()
+      const data: LoginResponse = await response.json();
       if (data.message === 'SUCCESS') {
-        const { token, refreshToken, expiresAt } = data.result
-        localStorage.setItem('token', token)
-        localStorage.setItem('refreshToken', refreshToken)
-        localStorage.setItem('expiresAt', expiresAt)
+        const { token, refreshToken, expiresAt } = data.result;
+        localStorage.setItem('token', token);
+        localStorage.setItem('refreshToken', refreshToken);
+        localStorage.setItem('expiresAt', expiresAt);
 
         // navigate to home page
-        navigate('/')
+        navigate('/');
       }
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   return (
     <div className='h-screen flex justify-center items-center'>
       <div className='container mx-auto flex flex-col justify-center items-center'>
-        <form className='border shadow px-10 py-5 rounded-xl' onSubmit={login}>
+        <form
+          className='border bg-white shadow px-10 py-5 rounded-xl'
+          onSubmit={login}>
           <h1 className='text-4xl font-bold text-primary mb-5'>
             Sign in to Account
           </h1>
@@ -101,7 +103,7 @@ const Login: React.FC = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

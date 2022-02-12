@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-type buttonType = 'Explore' | 'Activity'
+type buttonType = 'Explore' | 'Activity';
 
 interface Props {
-  type: buttonType
+  type: buttonType;
 }
 
 const ExploreActivityButton: React.FC<Props> = ({ type }) => {
-  const [selectedButton, setSelectedButton] = useState<buttonType>(type)
+  const [selectedButton, setSelectedButton] = useState<buttonType>(type);
   const activeClass =
-    'explore-activity-selected-shadow bg-primary px-4 py-1 font-bold text-white rounded-full'
-  const inactiveClass =
-    'bg-transprent px-4 py-1 font-bold text-white rounded-full'
+    'explore-activity-selected-shadow bg-primary px-4 py-1 font-medium text-white rounded-full';
+  const inactiveClass = 'bg-transprent px-4 py-1 text-white rounded-full';
 
   return (
-    <div className='bg-primary-dark p-1 rounded-full explore-activity-div-shadow'>
+    <div className='bg-primary-dark p-1 rounded-full explore-activity-div-shadow hidden md:flex'>
       <button
         className={selectedButton === 'Explore' ? activeClass : inactiveClass}
         onClick={() => setSelectedButton('Explore')}>
@@ -26,7 +25,7 @@ const ExploreActivityButton: React.FC<Props> = ({ type }) => {
         Activity
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default ExploreActivityButton
+export default ExploreActivityButton;

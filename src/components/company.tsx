@@ -1,17 +1,17 @@
-import React from 'react'
-import { Manufacturer } from '../interface'
+import React from 'react';
+import { Manufacturer } from '../interface';
 
 interface Props {
-  company: Manufacturer
+  company: Manufacturer;
 }
 
 const Company: React.FC<Props> = ({ company }) => {
   const clothes: string = company.productGroups
     .map(clothe => clothe.name)
-    .join(', ')
+    .join(', ');
 
   return (
-    <div className='bg-white  comapny-box-shadow rounded-lg'>
+    <div className='bg-white  company-box-shadow rounded-lg'>
       {/* banners */}
       <div className='flex p-3 gap-x-3'>
         {company.meta.banners.map((banner, index) => (
@@ -33,20 +33,25 @@ const Company: React.FC<Props> = ({ company }) => {
       </div>
 
       <div className='px-6 pb-6'>
-        <p className='mt-4 font-bold text-xl mb-2 text-text'>
+        <p className='mt-4 font-bold text-xl mb-2 text-normal'>
           {company.meta.companyName}
         </p>
         <div className='flex justify-between mb-2'>
-          <p className='text-light'>
-            {company.addresses[0].city}, {company.addresses[0].country}
-          </p>
+          {company.addresses[0]?.city && company.addresses[0]?.country ? (
+            <p className='text-light'>
+              {company.addresses[0].city}, {company.addresses[0].country}
+            </p>
+          ) : (
+            <p className='text-light'>Location not found</p>
+          )}
+
           <p className='text-green'>Min Qty: {company.minOrderQty}</p>
         </div>
         <p className='text-light mb-5'>{clothes}</p>
         <button className='details-button'>View Details</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Company
+export default Company;

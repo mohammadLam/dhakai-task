@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 .button {
-  @apply bg-white text-normal rounded whitespace-nowrap cursor-pointer px-6 py-2 border border-light-two;
+  @apply bg-white text-normal rounded whitespace-nowrap cursor-pointer text-center px-6 py-2 border border-light-two;
 }
 
 .button-selected {
-  @apply bg-primary font-bold text-white border-0;
+  @apply bg-primary font-medium text-white border-0;
 }
 
 .details-button {
-  @apply text-primary border-none rounded-full font-bold px-4 py-2 bg-green-light text-sm;
+  @apply text-primary border-none rounded-full font-medium px-4 py-2 bg-green-light text-sm;
 }
 
 .notification-button {
@@ -26,7 +26,7 @@
   @apply bg-primary-dark;
 }
 
-.comapny-box-shadow {
+.company-box-shadow {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
 }
 

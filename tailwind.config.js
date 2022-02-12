@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,tsx}'],
@@ -17,7 +17,14 @@ module.exports = {
       normal: '#2a2a2e',
       light: '#63636a',
       green: '#01896a'
+    },
+    screen: {
+      sm: '580px',
+      md: '688px',
+      lg: '944px',
+      xl: '1200px',
+      '2xl': '1456px'
     }
   },
   plugins: []
-}
+};
